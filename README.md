@@ -1,6 +1,6 @@
 # Scribe Hexmap [![Build Status](https://travis-ci.org/luetkemj/scribe-hexmap.svg?branch=master)](https://travis-ci.org/luetkemj/scribe-hexmap)
 
-Fantasy RPG weather generator.
+A Fantasy RPG Hexmap Generator
 
 ## Getting started
 

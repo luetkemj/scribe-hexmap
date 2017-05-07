@@ -1,20 +1,22 @@
 {
-  "name": "scribe-hexmap",
-  "version": "0.1.0",
+  "name": "@scribe/hexmap-generator",
+  "version": "v0.1.0-alpha",
   "description": "A Fantasy RPG Hexmap Generator",
   "repository": {
     "type": "git",
-    "url": "https://github.com/luetkemj/scribe-hexmap.git"
+    "url": "https://github.com/luetkemj/scribe-hexmap-generator.git"
   },
   "author": "luetkemj",
   "license": {
     "type": "MIT",
-    "url": "https://github.com/luetkemj/scribe-hexmap/raw/master/LICENSE"
+    "url": "https://github.com/luetkemj/scribe-hexmap-generator/raw/master/LICENSE"
   },
   "main": "build/index.js",
   "scripts": {
-    "build": "npm run lint && npm run test && babel src -d build",
+    "build": "npm run clean:build && npm run clean:dist && npm run lint && npm run test && npm run webpack && babel src -d build",
     "clean:build": "rimraf build",
+    "clean:coverage": "rimraf coverage",
+    "clean:dist": "rimraf dist",
     "clean:node_modules": "rimraf node_modules",
     "clean": "npm run clean:build && npm run clean:node_modules",
     "reinstall": "npm run clean && npm install",
@@ -22,24 +24,29 @@
     "lint": "npm run lint:eslint",
     "prepublish": "npm run build",
     "test:watch": "jest --watch --coverage",
-    "test": "npm run lint && jest --coverage"
+    "test": "npm run lint && jest --coverage",
+    "webpack": "./node_modules/.bin/webpack --config webpack.config.js"
   },
   "jest": {
     "verbose": false
   },
   "dependencies": {
-    "lodash": "4.17.4"
+    "lodash": "4.17.4",
+    "react": "^15.5.4",
+    "react-hexgrid": "^1.0.0-rc4"
   },
   "devDependencies": {
     "babel-cli": "6.24.1",
-    "babel-eslint": "7.2.1",
+    "babel-eslint": "7.2.3",
+    "babel-loader": "^7.0.0",
     "babel-plugin-transform-strict-mode": "6.24.1",
-    "babel-preset-env": "1.3.3",
-    "babel-preset-stage-1": "6.24.1",
+    "babel-preset-env": "1.4.0",
+    "babel-preset-stage-0": "^6.24.1",
     "eslint": "3.19.0",
     "eslint-config-airbnb-base": "11.1.3",
     "eslint-plugin-import": "2.2.0",
-    "jest": "19.0.2",
-    "rimraf": "2.6.1"
+    "jest": "20.0.0",
+    "rimraf": "2.6.1",
+    "webpack": "2.5.1"
   }
 }

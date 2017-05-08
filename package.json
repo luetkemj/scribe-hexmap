@@ -28,7 +28,7 @@
     "webpack": "./node_modules/.bin/webpack --config webpack.config.js"
   },
   "jest": {
-    "verbose": false
+    "verbose": true
   },
   "dependencies": {
     "lodash": "4.17.4",

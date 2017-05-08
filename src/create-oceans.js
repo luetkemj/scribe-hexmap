@@ -1,5 +1,5 @@
 import { cloneDeep, each } from 'lodash';
-import { HexUtils, getId } from 'react-hexgrid';
+import { HexUtils, getID } from 'react-hexgrid';
 
 export function createOceans(keyedHexes) {
   const updatedHexes = cloneDeep(keyedHexes);
@@ -13,7 +13,7 @@ export function createOceans(keyedHexes) {
     const neighbors = HexUtils.neighbours(hex);
 
     return each(neighbors, (neighbor) => {
-      if (!updatedHexes[getId(neighbor)]) {
+      if (!updatedHexes[getID(neighbor)]) {
         // we are at a map edge!
         updatedHexes[hexId].terrain = 'water';
         blackList[hex.terrainKey] = true;

@@ -21,14 +21,12 @@ export function createOceans(keyedHexes) {
     });
   });
 
-  // second pass
-  // iterate over blacklist removing any hexes missed in the first round
-  each(blackList, (terrainKey) => {
-    each(updatedHexes, (hex, hexId) => {
-      if (terrainKey === hex.terrainKey) {
+  each(updatedHexes, (hex, hexId) => {
+    if (hex.terrainKey !== 'water') {
+      if (blackList[hex.terrainKey]) {
         updatedHexes[hexId].terrain = 'water';
       }
-    });
+    }
   });
 
   return updatedHexes;

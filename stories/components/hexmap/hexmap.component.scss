@@ -1,0 +1,56 @@
+$swatch1: #000;
+
+.grid {
+  background: $swatch1;
+  margin-left: 200px;
+}
+
+.hex {
+  transition: stroke-width 100ms ease, stroke 100ms ease;
+  // stroke-width: 0;
+  stroke-width: 0.04px;
+
+  &:hover {
+    stroke-width: 0.1px;
+    // stroke: #333;
+    stroke: #000;
+  }
+
+  text {
+    font-family: 'scribe-terrain';
+    transform: scale(0.12);
+    fill: #000;
+  }
+}
+
+.hills {
+  fill: #e8cf4f;
+}
+
+.mountains {
+  fill: #b38100;
+}
+
+.forest {
+  fill: #79ae3b;
+}
+
+.plains {
+  fill: #d3e38a;
+}
+
+.swamp {
+  fill: #acdfa3;
+}
+
+.desert {
+  fill: #f1e268;
+}
+
+.coast {
+  fill: #fff993;
+}
+
+.water {
+  fill: #00659b;
+}

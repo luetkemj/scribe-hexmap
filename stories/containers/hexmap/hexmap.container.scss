@@ -1,0 +1,73 @@
+.controls {
+  background: #fff;
+  position: fixed;
+  padding: 20px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.actions {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #000;
+}
+
+.legend {
+  .pair {
+    display: flex;
+  }
+
+  .key {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+  }
+
+  .hills {
+    background: #e8cf4f;
+  }
+
+  .mountains {
+    background: #b38100;
+  }
+
+  .forest {
+    background: #79ae3b;
+  }
+
+  .plains {
+    background: #d3e38a;
+  }
+
+  .swamp {
+    background: #acdfa3;
+  }
+
+  .desert {
+    background: #f1e268;
+  }
+
+  .coast {
+    background: #fff993;
+  }
+
+  .water {
+    background: #00659b;
+  }
+}

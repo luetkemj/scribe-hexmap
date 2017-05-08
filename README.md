@@ -2,6 +2,8 @@
 
 A Fantasy RPG Hexmap Generator
 
+This package provides the tools to generate an array of data that can be used to render a hexmap.
+
 ## Getting started
 
 ## Features

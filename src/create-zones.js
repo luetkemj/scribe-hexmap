@@ -40,29 +40,3 @@ export function growSeeds(keyedHexes, idMap, seedHexes, seedKind) {
 
   return updatedHexes;
 }
-
-
-// export function generateZones(map, zones, key, density) {
-//   let zonedMap = cloneDeep(map);
-//   const zoneKey = `${key}Key`;
-//   const numSeeds = zones.length * density;
-//
-//   let denseZones = [];
-//   for (let i = 0; i < density; i += 1) {
-//     denseZones = denseZones.concat(zones);
-//   }
-//
-//   const seeds = shuffle(zonedMap).slice(0, numSeeds);
-//
-//   const zonedSeeds = seedMap(zonedMap, zones, seeds, key, zoneKey);
-//
-//   // find the closest seed's zone and copy that zone
-//   zonedMap = copyClosestZone(zonedMap, zonedSeeds, key, zoneKey);
-//
-//
-//   zonedMap.map(hex => assign(hex, {
-//     id: HexUtils.getID(hex),
-//   }));
-//
-//   return zonedMap;
-// }

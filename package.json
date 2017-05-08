@@ -1,6 +1,6 @@
 {
   "name": "@scribe/hexmap-generator",
-  "version": "v0.1.1-alpha",
+  "version": "v0.1.2-alpha",
   "description": "A Fantasy RPG Hexmap Generator",
   "repository": {
     "type": "git",

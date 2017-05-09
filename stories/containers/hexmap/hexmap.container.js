@@ -7,7 +7,7 @@ import {
 import { seedMap, growSeeds } from '../../../src/create-zones';
 import { createOceans } from '../../../src/create-oceans';
 import { createMountains } from '../../../src/create-mountains';
-
+import { createKingdoms } from '../../../src/create-kingdoms';
 
 import HexMap from '../../components/hexmap/hexmap.component';
 import './hexmap.container.scss';
@@ -15,7 +15,7 @@ import './hexmap.container.scss';
 export default class HexmapContainer extends Component {
   state = {
     hexMap: [],
-    hexDisplay: 'terrain',
+    hexDisplay: 'kingdom',
   }
 
   componentWillMount() {
@@ -39,11 +39,17 @@ export default class HexmapContainer extends Component {
     const SEED_HEXES = getRandomHexIdsSample(ID_MAP, 150);
     const SEEDS = ['hills', 'forest', 'plains', 'swamp', 'desert', 'hills', 'forest', 'plains', 'swamp', 'desert', 'water'];
 
+    // seed empty map with terrains
     let hexagons = seedMap(KEYED_HEXES, ID_MAP, SEED_HEXES, 'terrain', SEEDS);
+    // grow terrains
     hexagons = growSeeds(hexagons, ID_MAP, SEED_HEXES, 'terrain');
+    // Oceans
     hexagons = createOceans(hexagons);
+    // Mountains
     hexagons = createMountains(hexagons, ID_MAP, 15, 2, 0, 2);
     hexagons = createMountains(hexagons, ID_MAP, 35, 0, 2, 3);
+    // Kingdoms
+    hexagons = createKingdoms(hexagons, ID_MAP, ['☢', '☣', '☠', '✈', '✇', '', '']);
 
     const hexMap = [];
     ID_MAP.map(id => hexMap.push(hexagons[id]));
@@ -72,6 +78,7 @@ export default class HexmapContainer extends Component {
                   <option value="nothing">Nothing</option>
                   <option value="terrain">terrain</option>
                   <option value="terrainKey">terrainKeys</option>
+                  <option value="kingdom">Kingdoms</option>
                 </select>
               </label>
             </form>

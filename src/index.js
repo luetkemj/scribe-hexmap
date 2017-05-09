@@ -6,6 +6,8 @@ export {
   getRandomHexIdsSample,
   getRandomHexIdsShuffle } from './utils';
 
+export { createKingdoms } from './create-kingdoms';
+export { createMountains } from './create-mountains';
 export { createOceans } from './create-oceans';
 
 export {
